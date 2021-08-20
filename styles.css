@@ -125,7 +125,7 @@ body {
   --clr-card-bg: var(--clr-mod-violet);
   grid-area: daniel;
 
-  background-image: url("/images/bg-pattern-quotation.svg");
+  background-image: url("./images/bg-pattern-quotation.svg");
   background-size: 120px;
   background-repeat: no-repeat;
   background-position-x: 80%;
