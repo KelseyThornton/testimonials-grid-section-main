@@ -48,6 +48,10 @@ body {
   padding-top: 2rem;
 }
 
+.site__header {
+  display: none; /* The header is only there for accessability purposes */
+}
+
 .card-container {
   width: 90%;
   max-width: 1220px;
@@ -75,6 +79,8 @@ body {
   font-family: var(--ff-body);
   font-weight: 500;
   line-height: 1.25rem;
+
+  box-shadow: 5px 5px 20px hsla(217, 19%, 35%, 25%);
 
   position: relative;
 }
