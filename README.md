@@ -110,6 +110,52 @@ e.g.
 
 ```
 
+Another use for CSS variables I stumbeld on while making this is that you can use one for the number of columns in a grid - simply changing the number of columns (and the area name definitions) made the different grid layouts easy to manage.
+
+```css
+
+.card-container {
+  ...
+  display: grid;
+  gap: 25px;
+  grid-template-columns: repeat(var(--num-cols), 1fr);
+
+  /* One column in mobile view */
+  --num-cols: 1;
+  grid-template-areas:
+    "daniel"
+    "jonathan"
+    "jeanette"
+    "patrick"
+    "kira";
+}
+
+@media screen and (min-width: 500px) {
+  .card-container {
+    /* 2 columns in tablet view */
+    --num-cols: 2;
+    grid-template-areas:
+      "daniel daniel"
+      "jonathan kira"
+      "jeanette kira"
+      "patrick patrick";
+  }
+}
+
+@media screen and (min-width: 1100px) {
+  .card-container {
+    /* 4 columns in desktop view */
+    --num-cols: 4;
+    grid-template-areas:
+      "daniel daniel jonathan kira"
+      "jeanette patrick patrick kira";
+  }
+}
+
+```
+
+The layout could possibly have been done by defining spans on heights and widths and setting the grid to `grid-auto-flow: row dense;`
+
 ## Author
 
 - Website - [Kelsey Thornton](https://github.com/KelseyThornton)
